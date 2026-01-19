@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from tools.logger import LogType
+from tools.logger.type import LogType
 
 
 class Logger(logging.Logger):
