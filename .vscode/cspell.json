@@ -35,7 +35,6 @@
         "fastapi",
         "fontawesome",
         "fseventsd",
-        "googlecloud",
         "htmlcov",
         "imread",
         "ipykernel",
