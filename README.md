@@ -1,5 +1,3 @@
-# Python Development with uv and Ruff
-
 ## 📚 Development Workflow
 
 ### Installing Dependencies
