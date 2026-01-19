@@ -1,0 +1,40 @@
+[project]
+name = "default"
+version = "0.1.0"
+description = "This repository contains configurations to set up a Python development environment using VSCode's Dev Container feature. The environment includes uv and Ruff."
+
+authors = [{ name = "a5chin", email = "a5chin.origin+contact@gmail.com" }]
+maintainers = [{ name = "a5chin", email = "a5chin.origin+contact@gmail.com" }]
+
+requires-python = ">=3.11"
+readme = "README.md"
+license = { file = "LICENSE" }
+
+dependencies = [
+    "beartype>=0.22.6",
+    "google-cloud-logging>=3.12.1",
+    "jaxtyping>=0.3.3",
+    "pydantic>=2.12.0",
+    "pydantic-settings>=2.11.0",
+]
+
+[dependency-groups]
+dev = [
+    "cookiecutter>=2.6.0",
+    "cookiecutter-data-science>=2.3.0",
+    "ipykernel>=7.1.0",
+    "jupyter>=1.1.1",
+    "nox>=2025.5.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.0",
+    "ty>=0.0.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tools"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

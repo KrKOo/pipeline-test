@@ -1,0 +1,27 @@
+name: Format
+
+on:
+  pull_request:
+    paths:
+      - ".github/actions/setup-python-with-uv/action.yml"
+      - ".github/workflows/format.yml"
+      - "**.py"
+      - "**.sql"
+      - ".python-version"
+      - "pyproject.toml"
+      - "ruff.toml"
+      - "uv.lock"
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Python with uv
+        uses: ./.github/actions/setup-python-with-uv
+
+      - name: Format by Ruff
+        run: uv run nox -s fmt -- --ruff
