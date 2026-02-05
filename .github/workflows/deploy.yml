@@ -25,4 +25,4 @@ jobs:
         id: install
 
       - name: Deploy with helm
-        run: helm install pipeline-test chart -n $NAMESPACE && echo $NAMESPACE
+        run: helm install pipeline-test chart
