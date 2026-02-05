@@ -1,0 +1,28 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.py"
+      - ".env**"
+      - ".python-version"
+      - "chart"
+      - "pyproject.toml"
+      - "uv.lock"
+
+jobs:
+  helm:
+    runs-on: [self-hosted]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Helm
+        uses: azure/setup-helm@v4.3.0
+        with:
+          version: "latest"
+        id: install
+
+      - name: Deploy with helm
+        run: helm install pipeline-test chart -n kovac-ns
